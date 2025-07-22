@@ -2,5 +2,5 @@ langchain
 python-dotenv
 ipykernel
 langchain-groq
-
+langchain-google-genai
 -e .
