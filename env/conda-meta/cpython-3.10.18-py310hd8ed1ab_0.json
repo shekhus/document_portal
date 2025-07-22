@@ -1,0 +1,34 @@
+{
+  "build": "py310hd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "python >=3.10,<3.11.0a0",
+    "python_abi * *_cp310"
+  ],
+  "extracted_package_dir": "C:\\Users\\CS\\anaconda3\\pkgs\\cpython-3.10.18-py310hd8ed1ab_0",
+  "files": [],
+  "fn": "cpython-3.10.18-py310hd8ed1ab_0.conda",
+  "license": "Python-2.0",
+  "link": {
+    "source": "C:\\Users\\CS\\anaconda3\\pkgs\\cpython-3.10.18-py310hd8ed1ab_0",
+    "type": 1
+  },
+  "md5": "7004cb3fa62ad44d1cb70f3b080dfc8f",
+  "name": "cpython",
+  "noarch": "generic",
+  "package_tarball_full_path": "C:\\Users\\CS\\anaconda3\\pkgs\\cpython-3.10.18-py310hd8ed1ab_0.conda",
+  "package_type": "noarch_generic",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "44329b37f854a90b4b9bcf500c25c13dce91180eca26a9272f6a254725d2db8c",
+  "size": 50504,
+  "subdir": "noarch",
+  "timestamp": 1749048166000,
+  "url": "https://conda.anaconda.org/conda-forge/noarch/cpython-3.10.18-py310hd8ed1ab_0.conda",
+  "version": "3.10.18"
+}
