@@ -1,0 +1,80 @@
+[ 2025-07-28 00:56:06,060 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:05:39,431 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:06:23,058 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:08:38,499 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:12:02,324 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:12:47,499 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:13:25,582 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+[ 2025-07-28 01:13:42,479 ] ERROR exception_experiment (line:28) - 
+        Error in [C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py] at line [24]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "C:\Users\CS\AppData\Local\Temp\ipykernel_9696\3269899188.py", line 24, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        

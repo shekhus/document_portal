@@ -1,0 +1,11 @@
+[ 2025-07-28 01:18:24,970 ] ERROR custom_exception.py (line:31) - 
+        Error in [c:\Users\CS\Desktop\LLMOps\document_portal\exception\custom_exception.py] at line [27]
+        Message: division by zero
+        Traceback:
+        Traceback (most recent call last):
+  File "c:\Users\CS\Desktop\LLMOps\document_portal\exception\custom_exception.py", line 27, in <module>
+    a = 1 / 0
+        ~~^~~
+ZeroDivisionError: division by zero
+
+        
