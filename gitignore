@@ -14,3 +14,18 @@ __pycache__/
 logs/
 *.pyc
 test.py
+env/
+# Python cache and environment
+env/
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
