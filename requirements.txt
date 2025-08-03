@@ -8,4 +8,5 @@ pypdf
 faiss-cpu
 structlog
 PyMuPDF
+python-dotenv
 -e .
