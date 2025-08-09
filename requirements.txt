@@ -9,4 +9,5 @@ faiss-cpu
 structlog
 PyMuPDF
 python-dotenv
+pandas
 -e .
