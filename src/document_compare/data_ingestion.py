@@ -13,8 +13,10 @@ class DocumentIngestion:
     """
     Handles saving, reading, and combining of PDFs for comparison with session-based versioning.
     """
-    def __init__(self):
-        pass
+    def __init__(self,base_dir:str="data/document_compare"):
+        self.log = CustomLogger().get_logger(__name__)
+        self.base_dir = Path(base_dir)
+        self_base_dir.mkdir(parents=True, exist_ok=True)
 
     def delete_existing_files(self):
         """
@@ -81,3 +83,27 @@ class DocumentIngestion:
         except Exception as e:
             self.log.error(f"Error reading PDF: {e}")
             raise DocumentPortalException("Error reading PDF", sys)
+
+
+    def combine_documents(self) -> str:
+        """
+        Combine content of all PDFs in session folder into a single string.
+        """
+        try:
+            content_dict = {}
+            doc_parts = []
+            
+            for filename in sorted(self.session_path.iterdir()):
+                if filename.is_file() and filename.suffix == ".pdf":
+                    content_dict[filename.name] = self.read_pdf(filename)
+                    
+            for filename, content in content_dict.items():
+                doc_parts.append(f"\n--- {filename} ---\n{content}")
+             
+            combined_text = "\n".join(doc_parts)
+            self.log.info("Documents combined successfully", count=len(doc_parts))
+            return combined_text   
+        
+        except Exception as e:
+            self.log.error("Error combining documents, error=str(e)")
+            raise DocumentPortalException("Error combining documents", sys)
