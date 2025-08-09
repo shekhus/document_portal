@@ -8,3 +8,5 @@ logs/
 *.pyc
 test.py
 .egg-info
+".env" 
+".env" 
