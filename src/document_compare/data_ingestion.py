@@ -16,7 +16,7 @@ class DocumentIngestion:
     def __init__(self,base_dir:str="data/document_compare"):
         self.log = CustomLogger().get_logger(__name__)
         self.base_dir = Path(base_dir)
-        self_base_dir.mkdir(parents=True, exist_ok=True)
+        self.base_dir.mkdir(parents=True, exist_ok=True)
 
     def delete_existing_files(self):
         """
@@ -53,11 +53,11 @@ class DocumentIngestion:
             with open(act_path, "wb") as f:
                 f.write(actual_file.getbuffer())
 
-            self.log.info("Files saved", reference=str(ref_path), actual=str(act_path), session=self.session_id)
+            self.log.info("Files saved", reference=str(ref_path), actual=str(act_path))
             return ref_path, act_path
 
         except Exception as e:
-            self.log.error("Error saving PDF files", error=str(e), session=self.session_id)
+            self.log.error("Error saving PDF files", error=str(e))
             raise DocumentPortalException("Error saving files", sys)
       
 
@@ -93,7 +93,7 @@ class DocumentIngestion:
             content_dict = {}
             doc_parts = []
             
-            for filename in sorted(self.session_path.iterdir()):
+            for filename in sorted(self.base_dir.iterdir()):
                 if filename.is_file() and filename.suffix == ".pdf":
                     content_dict[filename.name] = self.read_pdf(filename)
                     
