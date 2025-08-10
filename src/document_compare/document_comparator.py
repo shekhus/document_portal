@@ -32,16 +32,25 @@ class DocumentComparatorLLM:
                 "format_instruction": self.parser.get_format_instructions()
             }
 
-            self.log.info("Starting document comparison", inputs=inputs)
+            # self.log.info("Starting document comparison", inputs=inputs)
+            # response = self.chain.invoke(inputs)
+            # self.log.info("Document comparison completed", response=response)
+            # return self._format_response(response)
+            
+            self.log.info("Invoking document comparison LLM chain")
             response = self.chain.invoke(inputs)
-            self.log.info("Document comparison completed", response=response)
+            self.log.info("Chain invoked successfully", response_preview=str(response)[:200])
             return self._format_response(response)
+
             
-            
+        # except Exception as e:
+        #     self.log.error(f"Document comparison failed: {e}")  
+        #     raise DocumentPortalException("An error occured while comparing documents" , sys) from e
+        
         except Exception as e:
-            self.log.error(f"Document comparison failed: {e}")  
-            raise DocumentPortalException("An error occured while comparing documents" , sys) from e
-    
+            self.log.error("Error in compare_documents", error=str(e))
+            raise DocumentPortalException("Error comparing documents", sys)
+
     
     def _format_response(self, response_parsed: list[dict]) -> pd.DataFrame: #type: ignore
         try:
