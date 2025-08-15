@@ -35,6 +35,7 @@ class SingleDocIngestor:
                 with open(temp_path, "wb") as f_out:
                     f_out.write(uploaded_file.read()) 
                 self.log.info("PDF saved for ingestion", filename=uploaded_file.name)
+                
                 loader = PyPDFLoader(str(temp_path))
                 docs = loader.load()
                 documents.extend(docs)
