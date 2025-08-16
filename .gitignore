@@ -10,3 +10,4 @@ test.py
 .egg-info
 ".env" 
 .env 
+faiss_index
