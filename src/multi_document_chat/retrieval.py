@@ -64,7 +64,7 @@ class ConversationalRAG:
 
     def invoke(self,user_input:str,chat_history: Optional[List[BaseMessage]] = None) ->str:
         
-# This is a method named `invoke` in a class, likely used for conversational AI. It takes user input and optional chat history, processes it through a chain ( likely a series of AI models), and returns the generated answer. If no answer is generated, it logs a warning and returns a default message. If an error occurs, it logs the error and raises a custom exception.
+# invoke takes user input and optional chat history, processes it through a chain ( likely a series of AI models), and returns the generated answer. If no answer is generated, it logs a warning and returns a default message. If an error occurs, it logs the error and raises a custom exception.
         """
         Args:
             user_input (str): _description_
