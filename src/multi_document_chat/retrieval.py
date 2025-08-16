@@ -4,6 +4,8 @@ from operator import itemgetter
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
+from typing import List, Optional
+from langchain_core.messages import BaseMessage
 from langchain_community.vectorstores import FAISS
 from utils.model_loader import ModelLoader
 from exception.custom_exception import DocumentPortalException
@@ -59,9 +61,28 @@ class ConversationalRAG:
             raise DocumentPortalException("Loading error in ConversationalRAG", sys)
 
 
-    def invoke(self):
+    def invoke(self,user_input:str,chat_history: Optional[List[BaseMessage]] = None) ->str:
+        
+# This is a method named `invoke` in a class, likely used for conversational AI. It takes user input and optional chat history, processes it through a chain ( likely a series of AI models), and returns the generated answer. If no answer is generated, it logs a warning and returns a default message. If an error occurs, it logs the error and raises a custom exception.
+        """
+        Args:
+            user_input (str): _description_
+            chat_history (Optional[List[BaseMessage]], optional): _description_. Defaults to None.
+        """
         try:
-            pass
+            chat_history = chat_history or []
+            payload={"input": user_input, "chat_history": chat_history}
+            answer = self.chain.invoke(payload)
+            if not answer:
+                self.log.warning("No answer generated", user_input=user_input, session_id=self.session_id)
+                return "no answer generated."
+            
+            self.log.info("Chain invoked successfully",
+                session_id=self.session_id,
+                user_input=user_input,
+                answer_preview=answer[:150],
+            )
+            return answer
         except Exception as e:
             self.log.error("Failed to invoke ConversationalRAG", error=str(e))
             raise DocumentPortalException("Invocation error in ConversationalRAG", sys)
