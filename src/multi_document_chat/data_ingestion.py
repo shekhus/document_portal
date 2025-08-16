@@ -57,9 +57,57 @@ class DocumentIngestor:
             self.log.error("Failed to initialize DocumentIngestor", error=str(e))
             raise DocumentPortalException("Initialization error in DocumentIngestor", sys)
 
-    def ingest_files(self):
-        # Logic to ingest the documents
-        pass
+    def ingest_files(self,uploaded_files):
+        
+#         # This code snippet is a method 
+# ingest_files
+#  that processes a list of uploaded files. Here's a succinct explanation:
+
+# It iterates through each uploaded file, checks its file extension, and skips unsupported files.
+# For supported files, it saves the file to a temporary directory with a unique filename.
+# It uses a loader (e.g., PyPDFLoader, Docx2txtLoader, or TextLoader) to extract the document content from the saved file.
+# It collects the extracted documents and returns a retriever object created from them.
+# If no valid documents are loaded, it raises a DocumentPortalException.
+# If any error occurs during the process, it logs the error and raises a DocumentPortalException.
+# # In summary, this method ingests uploaded files, extracts their content, and returns a retriever object for further processing.
+
+        try:
+            documents=[]
+            
+            for uploaded_file in uploaded_files:
+                ext = Path(uploaded_file.name).suffix.lower()
+                if ext not in self.SUPPORTED_EXTENSIONS:
+                    self.log.warning("Unsupported file skipped", filename=uploaded_file.name)
+                    continue
+                unique_filename = f"{uuid.uuid4().hex[:8]}{ext}"
+                temp_path = self.session_temp_dir / unique_filename
+                
+                with open(temp_path, "wb") as f:
+                    f.write(uploaded_file.read())
+                self.log.info("File saved for ingestion", filename=uploaded_file.name, saved_as=str(temp_path), session_id=self.session_id)
+                
+                if ext == ".pdf":
+                    loader = PyPDFLoader(str(temp_path))
+                elif ext == ".docx":
+                    loader = Docx2txtLoader(str(temp_path))     
+                elif ext == ".txt":
+                    loader = TextLoader(str(temp_path), encoding="utf-8")
+                else:
+                    self.log.warning("Unsupported file type encountered", filename=uploaded_file.name)
+                    continue
+                
+                docs = loader.load()
+                documents.extend(docs)
+                
+            if not documents:
+                raise DocumentPortalException("No valid documents loaded", sys)
+                
+            self.log.info("All documents loaded", total_docs=len(documents), session_id=self.session_id)
+            return self._create_retriever(documents)
+        
+        except Exception as e:
+            self.log.error("Failed to ingest files", error=str(e))
+            raise DocumentPortalException("Ingestion error in DocumentIngestor", sys)
 
     def _create_document_loader(self, documents):
         # Logic to create a document from the file path
