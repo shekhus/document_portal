@@ -53,7 +53,8 @@ class ConversationalRAG:
             )
             self.retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
             self.log.info("FAISS retriever loaded successfully", index_path=index_path, session_id=self.session_id)
-            self._build_lcel_chain()
+          
+            
             return self.retriever
         
         except Exception as e:
