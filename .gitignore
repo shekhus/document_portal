@@ -12,3 +12,5 @@ test.py
 .env 
 faiss_index
 acrhive
+data/
+document_portal.egg-info
