@@ -24,3 +24,7 @@ for pkg in packages:
         print(f"{pkg}=={version}")
     except importlib.metadata.PackageNotFoundError:
         print(f"{pkg} (not installed)")
+        
+        # # serve static & templates
+# app.mount("/static", StaticFiles(directory="../static"), name="static")
+# templates = Jinja2Templates(directory="../templates")
